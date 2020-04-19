@@ -1,6 +1,6 @@
 import random
 
-def indice_max(L): # Return the index of the max value of L
+def index_of_the_max(L): # Return the index of the max value of L
     imax = 0
     for i in range(len(L)):
         if L[i] > L[imax]:
@@ -64,12 +64,12 @@ class Game:
     def select(self, m): # Select the m best element (with the lowest fitness)
         temp_list = self.fitnesses[:m]
         self.selected = self.pop[:m]
-        imax = indice_max(temp_list)
+        imax = index_of_the_max(temp_list)
         for i in range(m, len(self.fitnesses)):
             if self.fitnesses[i] < temp_list[imax]:
                 temp_list[imax] = self.fitnesses[i]
                 self.selected[imax] = self.pop[i]
-                imax = indice_max(temp_list)
+                imax = index_of_the_max(temp_list)
 
     def mutation(self): # Carry on mutations
         for i in range(len(self.selected)):
