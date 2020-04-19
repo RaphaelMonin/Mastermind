@@ -61,7 +61,7 @@ class Game:
         for i in range(len(self.pop)):
             self.fitnesses.append(fitness(self.guessed, self.pop[i], self.scores_obtenus))
 
-    def select(self, m): # Select the m best element (with the lowest fitness)
+    def select(self, m): # Select the m best elements (with the lowest fitness)
         temp_list = self.fitnesses[:m]
         self.selected = self.pop[:m]
         imax = index_of_the_max(temp_list)
